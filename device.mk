@@ -73,6 +73,10 @@ PRODUCT_PROPERTY_OVERRIDES += log.tag.ShannonQNS-mms=DEBUG
 PRODUCT_PROPERTY_OVERRIDES += log.tag.ShannonQNS-xcap=DEBUG
 PRODUCT_PROPERTY_OVERRIDES += log.tag.ShannonQNS-HC=DEBUG
 
+LOCAL_PATH := device/google/gs101
+
+TARGET_PRODUCT_PROP := $(LOCAL_PATH)/product.prop
+
 # Modem userdebug
 include device/google/gs101/modem/userdebug.mk
 endif
