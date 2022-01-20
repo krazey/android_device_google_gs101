@@ -520,6 +520,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
         ConnectivityOverlay
 
+# Bluetooth
+PRODUCT_PACKAGES += \
+    BluetoothOverlay
+
 PRODUCT_PACKAGES_DEBUG += \
 	sg_write_buffer \
 	f2fs_io \
