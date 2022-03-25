@@ -33,6 +33,24 @@
       "message": "Will simple assignment work here?",
       "revId": "4293b68380c103bf293ac62dad64223274f282e1",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c0396e20_54977397",
+        "filename": "BoardConfig-common.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1535516
+      },
+      "writtenOn": "2022-03-25T17:34:21Z",
+      "side": 1,
+      "message": "Oh probably. I can send a followup CL to fix it, but internally it\u0027s already been submitted as recursive so it would conflict if I changed in here.",
+      "parentUuid": "3bae812e_1c3dac6b",
+      "revId": "4293b68380c103bf293ac62dad64223274f282e1",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
