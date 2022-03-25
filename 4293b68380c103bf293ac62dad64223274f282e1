@@ -16,6 +16,23 @@
       "message": "This is a cherrypick of ag/16571408",
       "revId": "4293b68380c103bf293ac62dad64223274f282e1",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3bae812e_1c3dac6b",
+        "filename": "BoardConfig-common.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1344584
+      },
+      "writtenOn": "2022-03-25T17:24:27Z",
+      "side": 1,
+      "message": "Will simple assignment work here?",
+      "revId": "4293b68380c103bf293ac62dad64223274f282e1",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
