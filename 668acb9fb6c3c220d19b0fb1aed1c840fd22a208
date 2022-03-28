@@ -1,5 +1,23 @@
 {
-  "comments": [],
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8dfda879_a724c239",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1859295
+      },
+      "writtenOn": "2022-03-28T07:33:34Z",
+      "side": 1,
+      "message": "Bypass Lint due to b/226573153.",
+      "revId": "668acb9fb6c3c220d19b0fb1aed1c840fd22a208",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ],
   "submitRequirementResults": [
     {
       "submitRequirement": {
