@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "279a10fb_b6e10bfa",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1881060
+      },
+      "writtenOn": "2022-05-06T21:46:58Z",
+      "side": 1,
+      "message": "Do we want to submit this for pixel 6 ?\nIf yes, do we want a restriction on automerger ? ",
+      "revId": "7b5aeb240118f20e8ed358d7de1e51e7dcdca512",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
