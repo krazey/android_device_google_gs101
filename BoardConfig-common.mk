@@ -389,4 +389,9 @@ BOARD_KERNEL_CMDLINE += at24.write_timeout=100
 # Enable larger logbuf
 BOARD_KERNEL_CMDLINE += log_buf_len=1024K
 
+# Enable KUnit for userdebug and eng builds
+ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
+  BOARD_KERNEL_CMDLINE += kunit.enable=1
+endif
+
 -include vendor/google_devices/gs101/proprietary/BoardConfigVendor.mk
