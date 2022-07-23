@@ -69,7 +69,7 @@ int64_t UfsStateResidencyDataProvider::readStat(std::string path) {
     char buf[size];
     (void)fread(&buf, sizeof(char), size, fp.get());
     int64_t ret;
-    if (!ParseInt(Trim(std::string(buf)), &ret)) {
+    if (!ParseInt(Trim(buf), &ret)) {
         LOG(ERROR) << "Failed to parse int64 from [" << std::string(buf) << "]";
     }
     return ret;

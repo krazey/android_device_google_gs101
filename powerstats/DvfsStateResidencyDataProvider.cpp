@@ -41,7 +41,7 @@ DvfsStateResidencyDataProvider::DvfsStateResidencyDataProvider(std::string path,
 
 int32_t DvfsStateResidencyDataProvider::matchEntity(char const *line) {
     for (int32_t i = 0; i < mPowerEntities.size(); i++) {
-        if (mPowerEntities[i].powerEntityName == Trim(std::string(line))) {
+        if (mPowerEntities[i].powerEntityName == Trim(line)) {
             return i;
         }
     }
@@ -50,7 +50,7 @@ int32_t DvfsStateResidencyDataProvider::matchEntity(char const *line) {
 
 int32_t DvfsStateResidencyDataProvider::matchState(char const *line, const Config& powerEntity) {
     for (int32_t i = 0; i < powerEntity.states.size(); i++) {
-        if (StartsWith(Trim(std::string(line)), powerEntity.states[i].second)) {
+        if (StartsWith(Trim(line), powerEntity.states[i].second)) {
             return i;
         }
     }
