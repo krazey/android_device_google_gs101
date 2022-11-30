@@ -1,4 +1,46 @@
 {
+  "Variables": [
+    {
+      "Name": "MaxCapacityCpus",
+      "Value": "0-7"
+    },
+    {
+      "Name": "HighCapacityCpus",
+      "Value": "0-7"
+    },
+    {
+      "Name": "NormalCapacityCpus",
+      "Value": "0-5"
+    },
+    {
+      "Name": "LowCapacityCpus",
+      "Value": "0-1"
+    },
+    {
+      "Name": "RestrictedCpus",
+      "Value": "0-3"
+    },
+    {
+      "Name": "CameraMaxCpus",
+      "Value": "0-7"
+    },
+    {
+      "Name": "CameraHighCpus",
+      "Value": "6-7"
+    },
+    {
+      "Name": "CameraMidCpus",
+      "Value": "4-5"
+    },
+    {
+      "Name": "CameraMidHighCpus",
+      "Value": "4-7"
+    },
+    {
+      "Name": "SystemBackgroundCpus",
+      "Value": "0-3"
+    }
+  ],
   "Profiles": [
     {
       "Name": "MaxPerformance",
@@ -79,11 +121,11 @@
       "Name": "CameraServiceHighCapacity",
       "Actions": [
         {
-          "Name": "JoinCgroup",
+          "Name": "SetAttribute",
           "Params":
           {
-            "Controller": "cpuset",
-            "Path": "camera-daemon-high-group"
+            "Name": "CpusetCpus",
+            "Variable": "CameraHighCpus"
           }
         }
       ]
@@ -92,11 +134,11 @@
       "Name": "CameraServiceMidCapacity",
       "Actions": [
         {
-          "Name": "JoinCgroup",
+          "Name": "SetAttribute",
           "Params":
           {
-            "Controller": "cpuset",
-            "Path": "camera-daemon-mid-group"
+            "Name": "CpusetCpus",
+            "Variable": "CameraMidCpus"
           }
         }
       ]
@@ -105,11 +147,11 @@
       "Name": "CameraServiceMidHighCapacity",
       "Actions": [
         {
-          "Name": "JoinCgroup",
+          "Name": "SetAttribute",
           "Params":
           {
-            "Controller": "cpuset",
-            "Path": "camera-daemon-mid-high-group"
+            "Name": "CpusetCpus",
+            "Variable": "CameraMidHighCpus"
           }
         }
       ]
@@ -208,11 +250,11 @@
       "Name": "SFMainPolicy",
       "Actions": [
         {
-          "Name": "JoinCgroup",
+          "Name": "SetAttribute",
           "Params":
           {
-            "Controller": "cpuset",
-            "Path": "top-app"
+            "Name": "CpusetCpus",
+            "Variable": "HighCapacityCpus"
           }
         },
         {
@@ -231,11 +273,11 @@
       "Name": "SFRenderEnginePolicy",
       "Actions": [
         {
-          "Name": "JoinCgroup",
+          "Name": "SetAttribute",
           "Params":
           {
-            "Controller": "cpuset",
-            "Path": "top-app"
+            "Name": "CpusetCpus",
+            "Variable": "HighCapacityCpus"
           }
         },
         {
