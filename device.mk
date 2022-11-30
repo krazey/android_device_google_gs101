@@ -1193,3 +1193,13 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Call deleteAllKeys if vold detects a factory reset
 PRODUCT_VENDOR_PROPERTIES += ro.crypto.metadata_init_delete_all_keys.enabled=true
+
+# The following allows us to add a new file into /system partition.
+PRODUCT_ARTIFACT_PATH_REQUIREMENT_ALLOWED_LIST += \
+       system/etc/fstab.ext4
+
+# The following will be added into /system/build.prop.
+PRODUCT_SYSTEM_PROPERTIES += ro.boot.fstab_suffix=ext4
+
+PRODUCT_COPY_FILES += \
+device/google/$(TARGET_BOARD_PLATFORM)/conf/fstab.gs101.in:$(TARGET_COPY_OUT_SYSTEM)/etc/fstab.ext4
