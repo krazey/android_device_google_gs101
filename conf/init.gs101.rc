@@ -176,28 +176,8 @@ on init
     chown root root /dev/cpuctl/camera-daemon/cpu.uclamp.latency_sensitive
     chown system system /dev/cpuctl/camera-daemon/cgroup.procs
 
-    mkdir /dev/cpuset/camera-daemon-high-group
-    write /dev/cpuset/camera-daemon-high-group/cpus 0-7
-    write /dev/cpuset/camera-daemon-high-group/mems 0
-    chown system system /dev/cpuset/camera-daemon-high-group/tasks
-    chmod 0664 /dev/cpuset/camera-daemon-high-group/tasks
-
-    mkdir /dev/cpuset/camera-daemon-mid-group
-    write /dev/cpuset/camera-daemon-mid-group/cpus 0-7
-    write /dev/cpuset/camera-daemon-mid-group/mems 0
-    chown system system /dev/cpuset/camera-daemon-mid-group/tasks
-    chmod 0664 /dev/cpuset/camera-daemon-mid-group/tasks
-
-    mkdir /dev/cpuset/camera-daemon-mid-high-group
-    write /dev/cpuset/camera-daemon-mid-high-group/cpus 0-7
-    write /dev/cpuset/camera-daemon-mid-high-group/mems 0
-    chown system system /dev/cpuset/camera-daemon-mid-high-group/tasks
-    chmod 0664 /dev/cpuset/camera-daemon-mid-high-group/tasks
-
     write /proc/vendor_sched/cam_prefer_idle 1
     write /proc/vendor_sched/cam_uclamp_min 1
-
-    chown system system /dev/cpuset/cgroup.procs
 
     # nanohub sensor
     chmod 0664 /dev/nanohub
@@ -744,13 +724,6 @@ on property:sys.boot_completed=1
     write /sys/devices/platform/17000010.devfreq_mif/devfreq/17000010.devfreq_mif/exynos_data/cancel_boot_freq 1
     write /sys/devices/platform/17000020.devfreq_int/devfreq/17000020.devfreq_int/exynos_data/cancel_boot_freq 1
 
-    # Setup final cpuset
-    write /dev/cpuset/top-app/cpus ${persist.device_config.vendor_system_native.top-app_cpuset:-0-7}
-    write /dev/cpuset/foreground/cpus ${persist.device_config.vendor_system_native.foreground_cpuset:-0-3,4-5}
-    write /dev/cpuset/background/cpus ${persist.device_config.vendor_system_native.background_cpuset:-0-1}
-    write /dev/cpuset/system-background/cpus ${persist.device_config.vendor_system_native.system-background_cpuset:-0-3}
-    write /dev/cpuset/restricted/cpus ${persist.device_config.vendor_system_native.restricted_cpuset:-0-3}
-    write /dev/cpuset/camera-daemon/cpus ${persist.device_config.vendor_system_native.camera-daemon_cpuset:-0-7}
     setprop vendor.powerhal.init 1
 
     # Setup final cpu.uclamp
@@ -1010,16 +983,3 @@ on property:ro.boot.mode=charger && property:init.svc.vendor.charger=running
     # Enable UFS powersaving in Off Mode Charger
     write /dev/sys/block/bootdevice/clkgate_enable 1
 
-# Cpuset experiment
-on property:persist.device_config.vendor_system_native.top-app_cpuset=*
-    write /dev/cpuset/top-app/cpus ${persist.device_config.vendor_system_native.top-app_cpuset:-0-7}
-on property:persist.device_config.vendor_system_native.foreground_cpuset=*
-    write /dev/cpuset/foreground/cpus ${persist.device_config.vendor_system_native.foreground_cpuset:-0-3,4-5}
-on property:persist.device_config.vendor_system_native.background_cpuset=*
-    write /dev/cpuset/background/cpus ${persist.device_config.vendor_system_native.background_cpuset:-0-1}
-on property:persist.device_config.vendor_system_native.system-background_cpuset=*
-    write /dev/cpuset/system-background/cpus ${persist.device_config.vendor_system_native.system-background_cpuset:-0-3}
-on property:persist.device_config.vendor_system_native.restricted_cpuset=*
-    write /dev/cpuset/restricted/cpus ${persist.device_config.vendor_system_native.restricted_cpuset:-0-3}
-on property:persist.device_config.vendor_system_native.camera-daemon_cpuset=*
-    write /dev/cpuset/camera-daemon/cpus ${persist.device_config.vendor_system_native.camera-daemon_cpuset:-0-7}
