@@ -51,7 +51,7 @@ cc_binary {
 
     ],
     static_libs: [
-        "libpixelusb",
+        "libpixelusb-aidl",
         "libpixelstats",
     ],
     export_shared_lib_headers: [
